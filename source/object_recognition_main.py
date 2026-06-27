@@ -13,7 +13,8 @@ def main():
     args = vars(ap.parse_args())
 
     # load the image
-    IMAGE_SUBDIRECTORY = "\\files\\images\\" # const
+    ## Changed in the Raspberry Pi version on 6/25/24
+    IMAGE_SUBDIRECTORY = os.sep + "files" + os.sep + "images" + os.sep  # const
     image_directory = os.getcwd() + IMAGE_SUBDIRECTORY
     image_filename = args["image"]
     image_full_path = image_directory + image_filename

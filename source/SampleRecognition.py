@@ -171,8 +171,11 @@ class SampleRecognition:
             # Draw the rectangle
             cv2.drawContours(show_rects, [box], 0, (0, 255, 0), 2)
 
+        ## Note: as of 6/24/26 the next 3 lines are commented out in the
+        # Raspberry Pi version until we implement an X11 bridge when we're
         cv2.imshow("Recognized objects ", show_rects)
         cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
         rects_filename = self.output_filename_preamble + "_RECT.png"
         cv2.imwrite(rects_filename, show_rects)
